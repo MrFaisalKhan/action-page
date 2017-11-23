@@ -1,0 +1,19 @@
+<?php
+	if(isset($_POST['Submit'])){
+		$_name=$_POST['name'];
+		$_email=$_POST['email'];
+		$_phone=$_POST['phone'];
+		$_msg=$_POST['msg'];
+		
+		$to='no-reply@cyberwalkers.ml';
+		$subject='from submition';
+		$message=name: ".$name."\n"."email: ".$email."\n"."phone: ".$phone."\n"."msg: ".$msg."\n".
+		$header="from: ".$email;
+		
+		if(mail($to, $subject, $message, $header)){
+		echo "<h1> Sent successfuly! Thank you"." ".$name.",We Will Contact you Shortly!</h1>";
+		}
+		else{
+			echo "some thing went wrong!";
+			}
+?>
